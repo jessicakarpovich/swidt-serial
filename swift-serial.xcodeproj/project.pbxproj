@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		486341CCA46F781BEA5EBEB7 /* libPods-swift-serial.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03411D21887E08A3139628FA /* libPods-swift-serial.a */; };
 		FCA5ECBE223353510057CA91 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5ECBD223353510057CA91 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03411D21887E08A3139628FA /* libPods-swift-serial.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-swift-serial.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		377D8A2027252E76762ED997 /* Pods-swift-serial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-serial.debug.xcconfig"; path = "Target Support Files/Pods-swift-serial/Pods-swift-serial.debug.xcconfig"; sourceTree = "<group>"; };
+		860DD9983DDEEC736465A90C /* Pods-swift-serial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-serial.release.xcconfig"; path = "Target Support Files/Pods-swift-serial/Pods-swift-serial.release.xcconfig"; sourceTree = "<group>"; };
 		FCA5ECBA223353510057CA91 /* swift-serial */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "swift-serial"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA5ECBD223353510057CA91 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,17 +36,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486341CCA46F781BEA5EBEB7 /* libPods-swift-serial.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A753D1894E6B0D604352EF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03411D21887E08A3139628FA /* libPods-swift-serial.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		61AB91BE5CE89C72AFE27414 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				377D8A2027252E76762ED997 /* Pods-swift-serial.debug.xcconfig */,
+				860DD9983DDEEC736465A90C /* Pods-swift-serial.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FCA5ECB1223353510057CA91 = {
 			isa = PBXGroup;
 			children = (
 				FCA5ECBC223353510057CA91 /* swift-serial */,
 				FCA5ECBB223353510057CA91 /* Products */,
+				61AB91BE5CE89C72AFE27414 /* Pods */,
+				1A753D1894E6B0D604352EF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +94,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCA5ECC1223353510057CA91 /* Build configuration list for PBXNativeTarget "swift-serial" */;
 			buildPhases = (
+				0C9675317756C4171B428F77 /* [CP] Check Pods Manifest.lock */,
 				FCA5ECB6223353510057CA91 /* Sources */,
 				FCA5ECB7223353510057CA91 /* Frameworks */,
 				FCA5ECB8223353510057CA91 /* CopyFiles */,
@@ -113,6 +139,31 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C9675317756C4171B428F77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swift-serial-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FCA5ECB6223353510057CA91 /* Sources */ = {
@@ -243,6 +294,7 @@
 		};
 		FCA5ECC2223353510057CA91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 377D8A2027252E76762ED997 /* Pods-swift-serial.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -252,6 +304,7 @@
 		};
 		FCA5ECC3223353510057CA91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 860DD9983DDEEC736465A90C /* Pods-swift-serial.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
